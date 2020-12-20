@@ -1,0 +1,219 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.32.0.0
+Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: zoda star, uw, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.32.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.14.1
+Assembler:       Armasm.exe V6.14.1
+Linker/Locator:  ArmLink.exe V6.14.1
+Library Manager: ArmAr.exe V6.14.1
+Hex Converter:   FromElf.exe V6.14.1
+CPU DLL:         SARMCM3.DLL V5.32.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      lmidk-agdi.dll V???
+Dialog DLL:      TCM.DLL V1.46.0.0
+ 
+<h2>Project:</h2>
+C:\Users\sakhm\Desktop\calculator\calculator.uvprojx
+Project File Date:  12/05/2020
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.14.1', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+calculator.c(56): warning: no previous extern declaration for non-static variable 'numbers' [-Wmissing-variable-declarations]
+int numbers[16] = {0x40,0x79,0x24,0x30,0x19, // Each value turns on bits needed
+    ^
+calculator.c(56): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int numbers[16] = {0x40,0x79,0x24,0x30,0x19, // Each value turns on bits needed
+^
+calculator.c(61): warning: no previous extern declaration for non-static variable 'count' [-Wmissing-variable-declarations]
+unsigned long count=9999; // Counter for button presses
+              ^
+calculator.c(61): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+unsigned long count=9999; // Counter for button presses
+^
+calculator.c(63): warning: no previous extern declaration for non-static variable 'before' [-Wmissing-variable-declarations]
+int before=1; // States if button was pressed in previous
+    ^
+calculator.c(63): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int before=1; // States if button was pressed in previous
+^
+calculator.c(66): warning: this function declaration is not a prototype [-Wstrict-prototypes]
+void PortAD_Init(); // PORTA: Keypad column, PORTD: keypad row
+                ^
+                 void
+calculator.c(74): warning: no previous extern declaration for non-static variable 'cdelay' [-Wmissing-variable-declarations]
+int cdelay = 100;
+    ^
+calculator.c(74): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int cdelay = 100;
+^
+calculator.c(75): warning: no previous extern declaration for non-static variable 'vdelay' [-Wmissing-variable-declarations]
+int vdelay = 0;
+    ^
+calculator.c(75): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int vdelay = 0;
+^
+calculator.c(76): warning: no previous extern declaration for non-static variable 'swCont' [-Wmissing-variable-declarations]
+unsigned long swCont = 0;
+              ^
+calculator.c(76): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+unsigned long swCont = 0;
+^
+calculator.c(83): warning: no previous prototype for function 'PortAD_Init' [-Wmissing-prototypes]
+void PortAD_Init(){
+     ^
+calculator.c(66): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
+void PortAD_Init(); // PORTA: Keypad column, PORTD: keypad row
+     ^
+                 void
+calculator.c(136): warning: no previous extern declaration for non-static variable 'keymap' [-Wmissing-variable-declarations]
+int keymap[4][4] = {
+    ^
+calculator.c(136): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int keymap[4][4] = {
+^
+calculator.c(182): warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+        if (column == 0xE0) return keymap[row][0]; /* key in column 0 */
+                            ~~~~~~ ^~~~~~~~~~~~~~
+calculator.c(183): warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+        if (column == 0xD0) return keymap[row][1]; /* key in column 1 */
+                            ~~~~~~ ^~~~~~~~~~~~~~
+calculator.c(184): warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+        if (column == 0xB0) return keymap[row][2]; /* key in column 2 */
+                            ~~~~~~ ^~~~~~~~~~~~~~
+calculator.c(185): warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+        if (column == 0x70) return keymap[row][3]; /* key in column 3 */
+                            ~~~~~~ ^~~~~~~~~~~~~~
+calculator.c(203): warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+        return res;
+        ~~~~~~ ^~~
+calculator.c(259): warning: unused variable 'i' [-Wunused-variable]
+                        int i=0;
+                            ^
+calculator.c(262): warning: variable 'dsp' may be uninitialized when used here [-Wconditional-uninitialized]
+                        NumSplit(dsp);  
+                                 ^~~
+calculator.c(218): note: initialize the variable 'dsp' to silence this warning
+        int value, dsp;
+                      ^
+                       = 0
+calculator.c(248): warning: variable 'a' may be uninitialized when used here [-Wconditional-uninitialized]
+                                c = calculate(a, b1, oper);
+                                              ^
+calculator.c(210): note: initialize the variable 'a' to silence this warning
+        int a;
+             ^
+              = 0
+calculator.c(248): warning: variable 'b1' may be uninitialized when used here [-Wconditional-uninitialized]
+                                c = calculate(a, b1, oper);
+                                                 ^~
+calculator.c(212): note: initialize the variable 'b1' to silence this warning
+        int b1;
+              ^
+               = 0
+calculator.c(248): warning: variable 'oper' may be uninitialized when used here [-Wconditional-uninitialized]
+                                c = calculate(a, b1, oper);
+                                                     ^~~~
+calculator.c(211): note: initialize the variable 'oper' to silence this warning
+        int oper;
+                ^
+                 = 0
+calculator.c(277): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+        GPIO_PORTE_DATA_R = digit; // Selects digit
+                          ~ ^~~~~
+calculator.c(278): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+        GPIO_PORTB_DATA_R = numbers[number]; // Turns on number in selected digit
+                          ~ ^~~~~~~~~~~~~~~
+calculator.c(59): warning: no previous extern declaration for non-static variable 'digit1' [-Wmissing-variable-declarations]
+int digit1, digit2, digit3, digit4; // Number to be displayed in each digit
+    ^
+calculator.c(59): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int digit1, digit2, digit3, digit4; // Number to be displayed in each digit
+^
+calculator.c(59): warning: no previous extern declaration for non-static variable 'digit2' [-Wmissing-variable-declarations]
+int digit1, digit2, digit3, digit4; // Number to be displayed in each digit
+            ^
+calculator.c(59): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int digit1, digit2, digit3, digit4; // Number to be displayed in each digit
+^
+calculator.c(59): warning: no previous extern declaration for non-static variable 'digit3' [-Wmissing-variable-declarations]
+int digit1, digit2, digit3, digit4; // Number to be displayed in each digit
+                    ^
+calculator.c(59): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int digit1, digit2, digit3, digit4; // Number to be displayed in each digit
+^
+calculator.c(59): warning: no previous extern declaration for non-static variable 'digit4' [-Wmissing-variable-declarations]
+int digit1, digit2, digit3, digit4; // Number to be displayed in each digit
+                            ^
+calculator.c(59): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int digit1, digit2, digit3, digit4; // Number to be displayed in each digit
+^
+calculator.c(60): warning: no previous extern declaration for non-static variable 'SW2' [-Wmissing-variable-declarations]
+unsigned long SW2; // On-board push button
+              ^
+calculator.c(60): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+unsigned long SW2; // On-board push button
+^
+calculator.c(143): warning: no previous extern declaration for non-static variable 'row' [-Wmissing-variable-declarations]
+int row, column;
+    ^
+calculator.c(143): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int row, column;
+^
+calculator.c(143): warning: no previous extern declaration for non-static variable 'column' [-Wmissing-variable-declarations]
+int row, column;
+         ^
+calculator.c(143): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int row, column;
+^
+calculator.c(206): warning: no previous extern declaration for non-static variable 'key' [-Wmissing-variable-declarations]
+unsigned char key;
+              ^
+calculator.c(206): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+unsigned char key;
+^
+29 warnings generated.
+compiling calculator.c...
+linking...
+Program Size: Code=1616 RO-data=652 RW-data=128 ZI-data=632  
+".\Objects\calculator.axf" - 0 Error(s), 29 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.7.0.pack
+                ARM.CMSIS.5.7.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.4.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.TM4C_DFP.1.1.0.pack
+                Keil.TM4C_DFP.1.1.0
+                Texas Instruments Tiva C Series Device Support and Examples
+   * Component: Startup Version: 1.0.1
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Target_1
+  C:\Users\sakhm\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+  C:\Users\sakhm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.4.0
+
+   * Component: Keil::Device:Startup:1.0.1
+      Include file:  Device\Include\TM4C123\TM4C123.h
+      Source file:   Device\Source\system_TM4C123.c
+      Source file:   Device\Source\ARM\startup_TM4C123.s
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
